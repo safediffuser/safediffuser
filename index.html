@@ -209,12 +209,21 @@
               <br style="clear: left;"/>
             </div>
             
+            <p>
+            Diffuser
+            </p>
             <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
               <source src='images/maze_diff.mp4' type="video/mp4">
             </video>
+            <p>
+            Classifier Guidance
+            </p>
             <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
               <source src='images/maze_cg.mp4' type="video/mp4">
             </video>
+            <p>
+            SafeDiffuser
+            </p>
             <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
               <source src='images/maze_safe.mp4' type="video/mp4">
             </video>
@@ -310,7 +319,7 @@
               </div>
               <div style="float: left; width: 70%; display: inline-block; text-align: center;">
                 <p>
-                  The SafeDiffuser can achieve better reward when joint limitations are satisfied since no collision happens in joint space.
+                  The SafeDiffuser can achieve better reward when joint limitations are satisfied since no collision happens in joint space. Belows are three planning cases using SafeDiffuser.
                 </p>
               </div>
               <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloop', 'replay')" class="nounderline replay">
