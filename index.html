@@ -290,9 +290,10 @@
 
     
         <div class="content" align="left" style="width: 100%;">
-          <div class="title"><b>Lidar-based Safe Driving</b></div>
+          <div class="title"><b>Safe Planning for Manipulation</b></div>
           <p>
             For manipulation (in Pybullet), the diffusion models generate joint trajectories (as controls) for the robot, which are conditioned on the locations of the objects to grasp and place.
+            Specifications are joint limitations to avoid collision in joint space.
           </p>
           <br>
             <div style="width: 100%;">
@@ -301,7 +302,7 @@
               </div>
               <div style="float: left; width: 70%; display: inline-block; text-align: center;">
                 <p>
-                  <font style="color: #bb2222">Original lidar-red;</font> <font style="color: #006400">optimized lidar with invariance-green.</font>
+                  The SafeDiffuser can achieve better reward when joint limitations are satisfied since no collision happens in joint space.
                 </p>
               </div>
               <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloop', 'replay')" class="nounderline replay">
@@ -313,10 +314,13 @@
 
           <center style="padding-top: 0.1em;"
             <br>
-            <video width=49% autoplay playsinline muted class="noloop" onended="monitor('replay')">
-              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+            <video width=32% autoplay playsinline muted class="noloop" onended="monitor('replay')">
+              <source src='images/uncond_video_writer2.mp4' type="video/mp4">
             </video>
-            <video width=49% autoplay playsinline muted class="noloop" onended="monitor('replay')">
+            <video width=32% autoplay playsinline muted class="noloop" onended="monitor('replay')">
+              <source src='images/uncond_video_writer3.mp4' type="video/mp4">
+            </video>
+            <video width=32% autoplay playsinline muted class="noloop" onended="monitor('replay')">
               <source src='images/uncond_video_writer14.mp4' type="video/mp4">
             </video>
             
