@@ -174,7 +174,7 @@
           <table border=0>
             <tr valign=middle>
               <td>
-                <img src="images/teaser.pdf" width=125%>
+                <img src="images/teaser.png" width=125%>
               </td>
               <td>
                 <p style="float: right; width: 90%">
@@ -192,9 +192,10 @@
     
 
         <div class="content" align="left" style="width: 100%;">
-          <div class="title"><b>Spiral Curve Regression with Specifications</b></div>
+          <div class="title"><b>Safe Planning for Maze2D</b></div>
           <p>
-            The neural ODE is used to model a spiral curve that avoids critical areas (red): invariance propagated to model parameters.
+            In this experiment, we aim to impose trajectory constraints on the planning path of a maze. 
+            The diffusion model is conditioned on the initial positions and destinations.
           </p>
           <div align="center">
             <div style="width: 100%;">
@@ -208,20 +209,24 @@
               <br style="clear: left;"/>
             </div>
             
-            <img src="images/neuralODE.png" width=32%>
             <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
-              <source src='images/spiral.mp4' type="video/mp4">
+              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
             </video>
-            <img src="images/sat.png" width=32%>
+            <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
+              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+            </video>
+            <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
+              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+            </video>
           </div>
         </div>
         <br>
         <br>
 
         <div class="content" align="left" style="width: 100%;">
-          <div class="title"><b>Physical Dynamics Modeling</b></div>
+          <div class="title"><b>Safe Planning for Robot Locomotion</b></div>
           <p>
-            The neural ODE is used to model the dynamics of Walker2D in Gym: invariance propagated to model parameters.
+            For robot locomotion (in MuJoCo), we wish the robot to avoid collisions with obstacles, such as the roof.
           </p>
           <br>
           <div align="center">
@@ -242,13 +247,14 @@
             </div>
             
             <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
-              <source src='images/walking_without_invariance.mp4' type="video/mp4">
+              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
             </video>
             <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
-              <source src='images/walking_with_invariance.mp4' type="video/mp4">
+              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
             </video>
-            <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
-              src='images/walker.png' width=64%>
+            <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
+              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+            </video>
           </div>
           <br>
           
@@ -270,13 +276,11 @@
             </div>
             
             <video width=32% autoplay playsinline muted class="noloopy" onended="monitor('replayy')">
-              <source src='images/obs_walker_without_invariance.mp4' type="video/mp4">
+              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
             </video>
             <video width=32% autoplay playsinline muted class="noloopy" onended="monitor('replayy')">
-              <source src='images/obs_walker_invariance.mp4' type="video/mp4">
+              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
             </video>
-            <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
-              src='images/obs_walker.png' width=64%>
           </div>
 
         </div>
@@ -284,18 +288,11 @@
         <br>
         <br>
 
-        <!--div class="video-container">
-          <center>
-            <iframe src="https://drive.google.com/file/d/1JxCJcRfDSt1brpUJkgEGL3Li3-loxGug/preview"
-                    width="80%" allow="autoplay"></iframe>
-            </center>
-        </div-->
-
     
         <div class="content" align="left" style="width: 100%;">
           <div class="title"><b>Lidar-based Safe Driving</b></div>
           <p>
-            The neural ODE (with lidar as external input) is used to control an autonomous vehicle (i.e., a controller): invariance propagated to lidar (red trajectory-w/o invariance, green trajectory-w/ invariance, blue trajectory-conservative methods).
+            For manipulation (in Pybullet), the diffusion models generate joint trajectories (as controls) for the robot, which are conditioned on the locations of the objects to grasp and place.
           </p>
           <br>
             <div style="width: 100%;">
@@ -317,9 +314,12 @@
           <center style="padding-top: 0.1em;"
             <br>
             <video width=49% autoplay playsinline muted class="noloop" onended="monitor('replay')">
-              <source src='images/video_inv.mp4' type="video/mp4">
+              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
             </video>
-            <img src="images/driving_safe.png" width=40%>
+            <video width=49% autoplay playsinline muted class="noloop" onended="monitor('replay')">
+              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+            </video>
+            
           </center>
 
         </div>
