@@ -210,13 +210,13 @@
             </div>
             
             <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
-              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+              <source src='images/maze_diff.mp4' type="video/mp4">
             </video>
             <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
-              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+              <source src='images/maze_cg.mp4' type="video/mp4">
             </video>
             <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
-              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+              <source src='images/maze_safe.mp4' type="video/mp4">
             </video>
           </div>
         </div>
@@ -227,6 +227,7 @@
           <div class="title"><b>Safe Planning for Robot Locomotion</b></div>
           <p>
             For robot locomotion (in MuJoCo), we wish the robot to avoid collisions with obstacles, such as the roof.
+            The SafeDiffuser predicts 6 controls and 17 states for Walker2D, and predicts 3 controls and 11 states for the Hopper.
           </p>
           <br>
           <div align="center">
@@ -236,7 +237,7 @@
               </div>
               <div style="float: left; width: 70%; display: inline-block; text-align: center;">
                 <p>
-                  <font style="color: #bb2222">Roof collision avoidance:</font> left case without invariance, right case with invariance.
+                   Diffuser for Walker2D
                 </p>
               </div>
               <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloop_blocks', 'replay_blocks')" class="nounderline replay_blocks">
@@ -246,14 +247,16 @@
               <br style="clear: left;"/>
             </div>
             
-            <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
-              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+            <video width=80% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
+              <source src='images/walker2d_diff.mp4' type="video/mp4">
             </video>
-            <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
-              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
-            </video>
-            <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
-              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+            <div style="float: left; width: 70%; display: inline-block; text-align: center;">
+                <p>
+                   SafeDiffuser for Walker2D
+                </p>
+             </div>
+            <video width=80% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
+              <source src='images/walker2d_safe.mp4' type="video/mp4">
             </video>
           </div>
           <br>
@@ -265,7 +268,7 @@
               </div>
               <div style="float: left; width: 70%; display: inline-block; text-align: center;">
                 <p>
-                  <font style="color: #bb2222">Ball collision avoidance:</font> left case without invariance, right case with invariance.
+                  Diffuser for Hopper.
                 </p>
               </div>
               <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloopy', 'replayy')" class="nounderline replayy">
@@ -276,10 +279,15 @@
             </div>
             
             <video width=32% autoplay playsinline muted class="noloopy" onended="monitor('replayy')">
-              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+              <source src='images/hopper_diff.mp4' type="video/mp4">
             </video>
+            <div style="float: left; width: 70%; display: inline-block; text-align: center;">
+                <p>
+                  SafeDiffuser for Hopper.
+                </p>
+             </div>
             <video width=32% autoplay playsinline muted class="noloopy" onended="monitor('replayy')">
-              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+              <source src='images/hopper_safe.mp4' type="video/mp4">
             </video>
           </div>
 
