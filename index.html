@@ -177,7 +177,7 @@
                 <img src="images/teaser.png" width=150%>
               </td>
               <td>
-                <p style="float: right; width: 70%">
+                <p style="float: right; width: 80%">
                   Diffusion model-based approaches have shown promise in data-driven planning, but there are no safety guarantees,  
                   thus making it hard to be applied for safety-critical applications. To address these challenges, we propose a new method, 
                   called SafeDiffuser, to ensure diffusion probabilistic models satisfy specifications by using a class of control barrier functions. 
@@ -194,7 +194,7 @@
         <div class="content" align="left" style="width: 100%;">
           <div class="title"><b>Safe Planning for Maze2D</b></div>
           <p>
-            In this experiment, we aim to impose trajectory constraints on the planning path of a maze. 
+            In this experiment, we aim to impose trajectory constraints (red ellipses and super-ellipses below) on the planning path of a maze. 
             The diffusion model is conditioned on the initial positions and destinations.
           </p>
           <div align="center">
@@ -229,7 +229,7 @@
         <div class="content" align="left" style="width: 100%;">
           <div class="title"><b>Safe Planning for Robot Locomotion</b></div>
           <p>
-            For robot locomotion (in MuJoCo), we wish the robot to avoid collisions with obstacles, such as the roof.
+            For robot locomotion (in MuJoCo), we wish the robot to avoid collisions with obstacles, such as the roof (shown by the red lines below).
             The SafeDiffuser predicts 6 controls and 17 states for Walker2D, and predicts 3 controls and 11 states for the Hopper.
           </p>
           <br>
