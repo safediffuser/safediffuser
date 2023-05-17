@@ -15,8 +15,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
   <meta name="author" content="Anonymous">
-  <meta name="description" content="On the forward invariance of Neural ODEs">
-  <meta name="keywords" content="Performance guarantees, neural ODEs">
+  <meta name="description" content="SafeDiffuser: Safe Planning with Diffusion Probabilistic Models">
 
   <script src="files/head.js"></script>
 
@@ -179,20 +178,14 @@
               </td>
               <td>
                 <p style="float: right; width: 90%">
-                  <a href="https://arxiv.org/abs/1806.07366" class="link2">Neural ODEs</a> are continuous models that excel in learning representations from data with temporal properties, such as modeling system dynamics and controllers.
-                  Ensuring the output of neural ODEs to satisfy a certain performance (such as safety) is necessary for a variety of settings, which is defined as the forward invariance of neural ODEs. We propose a new method to ensure neural ODEs with invariance properties using <a href="https://arxiv.org/abs/1903.04706" class="link2">Control Barrier Functions (CBFs)</a>.
+                  Diffusion model-based approaches have shown promise in data-driven planning, but there are no safety guarantees,  
+                  thus making it hard to be applied for safety-critical applications. To address these challenges, we propose a new method, 
+                  called SafeDiffuser, to ensure diffusion probabilistic models satisfy specifications by using a class of control barrier functions. 
                 </span>
               </td>
             </tr>
           </table>
 
-          <center style="padding-top: 0.5em;">
-            <br>
-            <p>
-            What are CBFs? CBFs transform nonlinear optimizations to convex optimizations with provable guarantees.
-            </p>
-            <img src="images/CBF.png" width=49%>
-          </center>
         </div>
         <br>
         <br>
