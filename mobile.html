@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<head>
+
+<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GDXSC5Y2BD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GDXSC5Y2BD');
+  </script> -->
+
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta name="author" content="Anonymous">
+  <meta name="description" content="SafeDiffuser: Safe Planning with Diffusion Probabilistic Models">
+
+  <script src="files/head.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>SafeDiffuser: Safe Planning with Diffusion Probabilistic Models</title>
+  <link rel="stylesheet" href="./files/font.css">
+  <link rel="stylesheet" href="./files/main.css">
+
+  <link rel="stylesheet" type="text/css"
+      href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+
+  <style>
+    body {
+      font-family: "Computer Modern Serif", serif;
+      font-size: 12.5pt;
+    }
+
+
+    * {padding:0;margin:0;box-sizing:border-box;}
+    #video {
+      position: relative;
+      padding-bottom: 45%; /* 16:9 */
+      height: 0;
+    }
+    #video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80%;
+      height: 100%;
+      transform: translateX(12.5%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .link {
+      /*color: #0066CC;*/
+      color: #bb2222;
+      /*color: #882222;*/
+      text-decoration: none;
+    }
+    .link:hover {
+      text-decoration: underline;
+    }
+    .nounderline:hover {
+      text-decoration: none;
+    }
+
+    .link2 {
+      color: #0055AA;
+      /*color: #882222;*/
+      /*color: #882222;*/
+      text-decoration: none;
+    }
+    .link2:hover {
+      text-decoration: underline;
+    }
+
+    /* mobile */
+    h2 {
+      font-weight: bold;
+      font-size: 1.4em;
+    }
+    /* end mobile */
+
+  </style>
+
+  <style type="text/css">/**
+     * Style sheet used by new LibX tooltip code
+     */
+
+    /* We insert a <div> with libx-tooltip style under the body.
+     * This will inherit body's style - we can't afford to inherit undesirable 
+     * styles and we must redefine what we need.  OTOH, some things, e.g.
+     * font-size, might be ok to be inherited to stay within the page's tone.
+     */
+    .libx-tooltip {
+        display: none;
+        overflow: visible;
+        padding: 5px;
+        z-index: 100;
+        background-color: #eee;
+        color: #000;
+        font-weight: normal;
+        font-style: normal;
+        text-align: left;
+        border: 2px solid #666;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+    }
+
+    .libx-tooltip p {
+        /* override default 1em margin to keep paragraphs inside a tooltip closer together. */
+        margin: .2em;
+    }
+    </style><style type="text/css">/**
+     * Style sheet used by LibX autolinking code
+     */
+    .libx-autolink {
+    }
+
+  </style>
+
+</head>
+
+
+  <body>
+
+    <div class="outercontainer">
+      <div class="container" style="width: 90%;">
+
+        <div class="content project_title">
+          <br>
+          <h2>SafeDiffuser: Safe Planning with Diffusion Probabilistic Models</h2>
+          <div>
+            <div class="authors">
+                <a>Anonymous Author(s)</a>
+            </div>
+            <div style="margin-top: -0.35em;">
+              <span class="link"><a href="https://nips.cc/">NeurIPS 2023 submission</a></span>&nbsp;&nbsp;
+            </div>
+          </div>
+        </div>
+
+        <br><br>
+
+        <div class="content" style="width: 100%; margin-top: -1em;">
+          <div class="title"><b>SafeDiffuser</b></div>
+          <br>
+          <table border=0>
+            <tr valign=middle>
+              <td>
+                <img src="images/teaser1.png" width=150%>
+              </td>
+              <td>
+                <p style="float: right; width: 80%">
+                  Diffusion model-based approaches have shown promise in data-driven planning, but there are no safety guarantees,  
+                  thus making it hard to be applied for safety-critical applications. To address these challenges, we propose a new method, 
+                  called SafeDiffuser, to ensure diffusion probabilistic models satisfy specifications by using a class of control barrier functions. 
+                </span>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+        <br>
+        <br>
+    
+
+        <div class="content" align="left" style="width: 100%;">
+          <div class="title"><b>Safe Planning for Maze2D</b></div>
+          <p>
+            In this experiment, we aim to impose trajectory constraints (red ellipses and super-ellipses below) on the planning path of a maze. 
+            The diffusion model is conditioned on the initial positions and destinations.
+          </p>
+          <div align="center">
+            <div style="width: 100%;">
+              <div style="float: left; width: 47%; display: inline-block;">
+                &nbsp;
+              </div>
+              <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloopx', 'replayx')" class="nounderline replayx">
+                  <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
+                  <font style="vertical-align: middle; color: #bb2222;">replay</font>
+              </div>
+              <br style="clear: left;"/>
+            </div>
+            
+            <p>
+            ------------Diffuser--------------------------------Classifier Guidance-----------------------------SafeDiffuser--------------
+            </p>
+            <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
+              <source src='images/maze_diff.mp4' type="video/mp4">
+            </video>
+            <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
+              <source src='images/maze_cg.mp4' type="video/mp4">
+            </video>
+            <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
+              <source src='images/maze_safe.mp4' type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <br>
+        <br>
+
+        <div class="content" align="left" style="width: 100%;">
+          <div class="title"><b>Safe Planning for Robot Locomotion</b></div>
+          <p>
+            For robot locomotion (in MuJoCo), we wish the robot to avoid collisions with obstacles, such as the roof (shown by the red lines below).
+            The SafeDiffuser predicts 6 controls and 17 states for Walker2D, and predicts 3 controls and 11 states for the Hopper.
+          </p>
+          <br>
+          <div align="center">
+            <div style="width: 100%;">
+              <div style="float: left; width: 14%; display: inline-block;">
+                &nbsp;
+              </div>
+              <div style="float: left; width: 70%; display: inline-block; text-align: center;">
+                <p>
+                   Diffuser for Walker2D
+                </p>
+              </div>
+              <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloop_blocks', 'replay_blocks')" class="nounderline replay_blocks">
+                  <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
+                  <font style="vertical-align: middle; color: #bb2222;">replay</font>
+              </div>
+              <br style="clear: left;"/>
+            </div>
+            
+            <video width=80% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
+              <source src='images/walker2d_diff.mp4' type="video/mp4">
+            </video>
+            <div style="float: left; width: 70%; display: inline-block; text-align: center;">
+                <p>
+                   SafeDiffuser for Walker2D
+                </p>
+             </div>
+            <video width=80% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
+              <source src='images/walker2d_safe.mp4' type="video/mp4">
+            </video>
+          </div>
+          <br>
+          
+          <div align="center">     
+            <div style="width: 100%;">
+              <div style="float: left; width: 14%; display: inline-block;">
+                &nbsp;
+              </div>
+              <div style="float: left; width: 70%; display: inline-block; text-align: center;">
+                <p>
+                  Diffuser for Hopper.
+                </p>
+              </div>
+              <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloopy', 'replayy')" class="nounderline replayy">
+                <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
+                <font style="vertical-align: middle; color: #bb2222;">replay</font>
+              </div>
+              <br style="clear: left;"/>
+            </div>
+            
+            <video width=80% autoplay playsinline muted class="noloopy" onended="monitor('replayy')">
+              <source src='images/hopper_diff.mp4' type="video/mp4">
+            </video>
+            <div style="float: left; width: 70%; display: inline-block; text-align: center;">
+                <p>
+                  SafeDiffuser for Hopper.
+                </p>
+             </div>
+            <video width=80% autoplay playsinline muted class="noloopy" onended="monitor('replayy')">
+              <source src='images/hopper_safe.mp4' type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+
+    
+        <div class="content" align="left" style="width: 100%;">
+          <div class="title"><b>Safe Planning for Manipulation</b></div>
+          <p>
+            For manipulation (in Pybullet), the diffusion models generate joint trajectories (as controls) for the robot, which are conditioned on the locations of the objects to grasp and place.
+            Specifications are joint limitations to avoid collision in joint space.
+          </p>
+          <br>
+            <div style="width: 100%;">
+              <div style="float: left; width: 14%; display: inline-block;">
+                &nbsp;
+              </div>
+              <div style="float: left; width: 70%; display: inline-block; text-align: center;">
+                <p>
+                  The SafeDiffuser can achieve better reward when joint limitations are satisfied since no collision happens in joint space. Belows are three planning cases using SafeDiffuser.
+                </p>
+              </div>
+              <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloop', 'replay')" class="nounderline replay">
+                <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
+                <font style="vertical-align: middle; color: #bb2222;">replay</font>
+              </div>
+              <br style="clear: left;"/>
+            </div>
+
+          <center style="padding-top: 0.1em;"
+            <br>
+            <video width=32% autoplay playsinline muted class="noloop" onended="monitor('replay')">
+              <source src='images/uncond_video_writer2.mp4' type="video/mp4">
+            </video>
+            <video width=32% autoplay playsinline muted class="noloop" onended="monitor('replay')">
+              <source src='images/uncond_video_writer3.mp4' type="video/mp4">
+            </video>
+            <video width=32% autoplay playsinline muted class="noloop" onended="monitor('replay')">
+              <source src='images/uncond_video_writer14.mp4' type="video/mp4">
+            </video>
+            
+          </center>
+
+        </div>
+        <br>
+        <br>
+    
+        <br>
+        <br>
+
+        
+<br><br><br><br>  
+
+
+
+</div></body></html>
+
+<script>
+  retime(5, "noloop");
+  retime(8.1, "loop");
+</script>
