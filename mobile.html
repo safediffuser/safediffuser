@@ -11,7 +11,7 @@
   </script> -->
 
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-  <meta name="author" content="Anonymous">
+  <meta name="author" content="Wei Xiao">
   <meta name="description" content="SafeDiffuser: Safe Planning with Diffusion Probabilistic Models">
 
   <script src="files/head.js"></script>
@@ -137,10 +137,17 @@
           <h2>SafeDiffuser: Safe Planning with Diffusion Probabilistic Models</h2>
           <div>
             <div class="authors">
-                <a>Anonymous Author(s)</a>
+                <a href="https://people.csail.mit.edu/weixy/">Wei Xiao</a>,
+                <a>Tsun-Hsuan Wang, Chuang Gan, Ramin Hasani, Mathias Lechner, Daniela Rus</a>
             </div>
             <div style="margin-top: -0.35em;">
-              <span class="link"><a href="">Under submission</a></span>&nbsp;&nbsp;
+              <span class="link"><a href="https://iclr.cc/">ICLR 2025</a></span>&nbsp;&nbsp;
+              <span class="tag">
+                <a href="https://arxiv.org/pdf/2306.00148" class="link2">Paper</a>&nbsp;
+                <a href="https://github.com/Weixy21/SafeDiffuser" class="link2">Code</a>&nbsp;
+                <a  class="link2"><a href = "https://openreview.net/forum?id=ig2wk7kK9J">OpenReview</a></span>&nbsp;
+                <a href="files/bib.txt" class="link2">BibTex</a>&nbsp;
+              </span>
             </div>
           </div>
         </div>
@@ -158,7 +165,7 @@
               <td>
                 <p style="float: right; width: 80%">
                   Diffusion model-based approaches have shown promise in data-driven planning, but there are no safety guarantees,  
-                  thus making it hard to be applied for safety-critical applications. To address these challenges, we propose a new method, 
+                  thus making it hard to be applied for many safety-critical applications. To address these challenges, we propose a new method, 
                   called SafeDiffuser, to ensure diffusion probabilistic models satisfy specifications by using a class of control barrier functions. 
                 </span>
               </td>
@@ -189,7 +196,7 @@
             </div>
             
             <p>
-            ------------Diffuser--------------------------------Classifier Guidance-----------------------------SafeDiffuser--------------
+            ------------Diffuser------------------Classifier Guidance (Potential-based)-------------------------SafeDiffuser--------------
             </p>
             <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
               <source src='images/maze_diff.mp4' type="video/mp4">
@@ -199,6 +206,16 @@
             </video>
             <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
               <source src='images/maze_safe.mp4' type="video/mp4">
+            </video>
+
+            <p>
+            ------------------------------------Diffuser------------------------------------------SafeDiffuser---------------------------
+            </p>
+            <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
+              <source src='images/narrow_maze_diff.mp4' type="video/mp4">
+            </video>
+            <video width=32% autoplay playsinline muted class="noloopx" onended="monitor('replayx')">
+              <source src='images/narrow_maze_safe.mp4' type="video/mp4">
             </video>
           </div>
         </div>
